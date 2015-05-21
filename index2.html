@@ -196,7 +196,10 @@ font-size: 35px;
 					var empresa = $.trim(intermedio3[1]);
 					$('#id_emp').val(empresa);
 					$('#welcome').html('Bienvenido  '+usuario)
+					
 					localStorage.setItem("username", usuario);
+					localStorage.setItem("password", password);
+					localStorage.setItem("empresa", empresa);
 					
 					 var username = localStorage.getItem('username');
 					
