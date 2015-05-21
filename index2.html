@@ -34,12 +34,21 @@ font-size: 35px;
 </head>
 <body>
 <div class="container" >
-<div class="row">
-    <div class="col-md-12" style="text-align: center; background-color:black;color:#fff; font-size: 20px; padding-bottom: 10px; padding-top: 5px;">
-    <h3>Practisis Abaco</h3>
-    </div>               
-</div>
-<div class="row" style="padding-top: 10px;padding-bottom: 10px;">
+	<div class="row" style="background: #000">
+		<div class="col-md-12" style="text-align: center; background-color:black;color:#fff; font-size: 20px; padding-bottom: 10px; padding-top: 5px;">
+		<h3>Practisis Abaco</h3>
+		</div>              
+	</div>
+	<div class="row" style="background: #000;padding:10px;color:#fff;">
+		<div class='col-md-6' style="padding-left:10px;text-align:left;">
+			<span id='welcome'></span>
+		</div>
+		<div class='col-md-6' style='text-align:right;padding-right:10px;'>
+			<i class="fa fa-sign-out" onclick='salir()'>LogOut</i>
+		</div>
+	</div>
+	
+	<div class="row" style="padding-top: 10px;padding-bottom: 10px;">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div  class="panel-heading">
@@ -157,7 +166,10 @@ font-size: 35px;
 
 		
 		<script>                    
-
+				function salir(){
+					localStorage.clear();
+					window.location='index.html';
+				}
 				$(window).ready(function(){
 					$('#lafecha').datepicker({
 						showAnim: 'slideDown',
@@ -180,7 +192,7 @@ font-size: 35px;
 					var intermedio3=parejas[2].split("=");
 					var empresa = $.trim(intermedio3[1]);
 					$('#id_emp').val(empresa);
-					
+					$('#welcome').html('Bienvenido  '+usuario)
 					localStorage.setItem("username", usuario);
 					
 					 var username = localStorage.getItem('username');
